@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans", Helvetica, Arial;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #000;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+.green-text { color: #178A27; }
+.blue-text { color: #1686C1; }
+.red-text { color: #ad4f18; }
+
+
+/* Styles for navbar */
+.navbar .container {
+    width: 100%;
+    height: 68px;
+    position: fixed;
+    top: 0;
+    background-color: #383E4C;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.navbar .container ul {
+    display: flex;
+    flex-direction: row
+}
+
+.navbar .container ul li {
+    display: inline;
+    padding: 10px 30px;
+    margin: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.navbar .container ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.btn-green {
+    font-size: 1em;
+    color: white;
+    background-color:  #178A27; 
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+/* Styles for section 1, the home page */
+#section1 {
+    background-image: url("./img/0.jpg");
+    width: 100%;
+    height: 600px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+/* Styles for section 2, (About us), the feature area */
+/* Responsive Card design 
+   Image need to set width: 100% */
+#feature-area .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin-top: 60px;
+    margin-bottom: 60px; 
+    padding: 0 50px;
+}
+.feature-content {
+    background-color: #f2f2f2;
+    padding-bottom: 50px;
+    margin-bottom: 10px;
+}
+@media screen and (min-width: 40em) {    
+    .feature-content {
+        flex: 0 1 calc(50% - 1em);
+    }
+}
+@media screen and (min-width: 60em) {
+    .feature-content {
+        flex: 0 1 32%;
+    }
+}
+
+.feature-content h2, p {
+    padding: 0 20px;
+}
+
+/* Styles for section 2, (About us), the blog area */
+/* Responsive Card design */
+#blog-area .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin-top: 60px;
+    margin-bottom: 60px; 
+    padding: 0 50px;
+}
+.blog-content {
+    background-color: #f2f2f2;
+    padding-bottom: 50px;
+    margin-bottom: 10px;
+}
+@media screen and (min-width: 40em) {  
+    .blog-content {
+        flex: 0 1 calc(50% - 1em);
+    }
+}
+
+.blog-content h2, p {
+    padding: 0 20px;
+}
+
+
