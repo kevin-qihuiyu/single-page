@@ -16,8 +16,23 @@ h1 {
     text-shadow: 2px 2px #000;
 }
 
+h2 {
+    font-size: 40px;
+    font-weight: 300;
+    text-shadow: 2px 2px gray;
+}
+
+h3 {
+    padding: 0 20px;
+    font-size: 20px;
+}
+
 h4 {
     font-size: 24px;
+}
+
+h6 {
+    color: gray;
 }
 
 .green-text { color: #178A27; }
@@ -113,7 +128,7 @@ h4 {
     }
 }
 
-.feature-content h2, p {
+.feature-content h3, p {
     padding: 0 20px;
 }
 
@@ -140,8 +155,154 @@ h4 {
     }
 }
 
-.blog-content h2, p {
+.blog-content h3, p {
     padding: 0 20px;
 }
 
+/* Styles for section 3, the service area */
+#services-area {
+    background-image: url("./img/bg-2.jpg");
+    width: 100%;
+    height: 300px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+/* Styles for section 3, the testimonial area */
+/* Responsive Card design 
+   Image need to set width: 100% */
+#testimonial-area .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin-top: 60px;
+    margin-bottom: 60px; 
+    padding: 0 50px;
+}
+.testimonial-content {
+    background-color: #f2f2f2;
+    padding-bottom: 50px;
+    margin-bottom: 10px;
+}
+@media screen and (min-width: 40em) {    
+    .testimonial-content {
+        flex: 0 1 calc(50% - 1em);
+    }
+}
+@media screen and (min-width: 60em) {
+    .testimonial-content {
+        flex: 0 1 24%;
+    }
+}
+
+.testimonial-content h3, p {
+    padding: 0 20px;
+}
+
+.testimonial-conclusion{
+    background-color: #f2f2f2;
+    padding-bottom: 50px;
+    margin: 50px;
+}
+
+.testimonial-conclusion h3, p, a { 
+    padding: 0 20px;
+}
+
+/* Styles for section 4, the contact area */
+#contact-area {
+    background-image: url("./img/bg-3.jpg");
+    width: 100%;
+    height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+#contact-area .container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-area .container p {
+    margin: 10px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.3);
+    color: black;
+}
+
+#contact-area .container .contact-container{ 
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px;
+}
+
+.contact-column {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 50%;
+}
+
+input, textarea {
+    width: auto;
+    opacity: 0.3;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    color: black;
+}
+
+button {
+    background-color: rgb(44, 44, 44);
+    border-color: white;
+    border-width: 1px;
+    border-radius: 15px;
+    color: white;
+    
+    padding: 12px 9px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+
+    width: 120px;
+    font-size: 16px;
+}
+
+#footer-area {
+
+}
+
+.footer-note, .footer-text {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-note h2, .footer-note p {
+    font-style: italic;
+    color: #6e6e6e;
+    padding: 20px;
+}
