@@ -10,7 +10,13 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <ul>
+            <input type="checkbox" id="menu">
+            <label for="menu" class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <ul class="menu-content">
                 <li><a href="#section1">Home</a></li>
                 <li><a href="#section2">About Us</a></li>
                 <li><a href="#section3">Services</a></li>
@@ -132,14 +138,14 @@
                     </div>
                     <div class="contact-column">
                         <textarea name="message" id="comment" rows="6" placeholder="Your message here..."></textarea>
-                        <button>Send</button>
+                        <button class="btn">Send</button>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <button class="fab" id="up_button">
+    <button class="btn fab" id="up_button">
         GO UP
     </button>
 
