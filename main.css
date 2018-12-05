@@ -62,25 +62,54 @@ input#menu {
 
     .menu-icon {
         width: 55px;
-        margin: 5px 10px 5px 10px;
+        height: 68px;
         padding: 0 10px;
         background-color: #383E4C;
     }
 
     .menu-icon div {
+        display: block;
+        position: absolute;
         width: 35px;
         height: 2px;
         background-color: white;
-        margin: 10px 0;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    .menu-icon div:nth-child(1) {
+        top: 24px;
+    }
+
+    .menu-icon div:nth-child(2) {
+        top: 34px;
+    }
+
+    .menu-icon div:nth-child(3) {
+        top: 44px;
+    }
+
+    /* translate rotate order matters! */
+    input#menu:checked ~ .menu-icon div:nth-child(1) {
+        transform: translate(0px, 10px) rotate(45deg) ;
+    }
+
+    input#menu:checked ~ .menu-icon div:nth-child(2) {
+        display: none;
+    }
+
+    input#menu:checked ~ .menu-icon div:nth-child(3) {
+        /* display: none; */
+        transform:  translate(0px, -10px) rotate(-45deg); 
     }
 
     .menu-content{
         max-height: 0;
         overflow: hidden;
+        transition: 0.1s linear;
     }
 
-    input:checked ~ .menu-content {
-        max-height: 100%;
+    input#menu:checked ~ .menu-content {
+        max-height: 300px;
     }
 
     .navbar .container ul li {
@@ -138,7 +167,7 @@ input#menu {
 
 /* Styles for section 1, the home page */
 #section1 {
-    background-image: url("./img/0.jpg");
+    background-image: url("./img/bg-1.jpg");
     width: 100%;
     height: 600px;
     /* Create the parallax scrolling effect */
