@@ -23,7 +23,7 @@ fab.addEventListener("click", function(){
     timer = setInterval(function(){
         var pageTop = window.scrollY;
         // Scroll speed gets slower as closer to top. 
-        var speed = pageTop * 0.1;
+        var speed = pageTop * 0.2;
         document.documentElement.scrollTop -= speed;
 
         if (pageTop == 0){
