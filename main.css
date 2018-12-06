@@ -39,6 +39,9 @@ h6 {
 .blue-text { color: #1686C1; }
 .red-text { color: #ad4f18; }
 
+a {
+    cursor: pointer;
+}
 
 /* Styles for navbar */
 .navbar .container {
