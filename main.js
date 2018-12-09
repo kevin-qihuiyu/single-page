@@ -32,7 +32,7 @@ fab.addEventListener("click", function(){
     }, 30); 
 });
 
-/* Navbar list items 
+/* Navbar list items on the Navigation bar
 // 1) Click on navbar, will scroll to the corrsponding section smoothly.
 // TODO: fix header offset is not considered. */
 function scrollToElement(id) {
@@ -41,36 +41,35 @@ function scrollToElement(id) {
     });
 }
 
-// 2) Navbar list items will be highligted when the corresponding section is within range.
-// Cost: added class="sec" to all section divs, and added class="sectionN" to all li.
+/**  
+ *   2) Navbar list items will be highligted when the corresponding section is within range.
+ *   The idea is to check window.scroll and see which interval its value falls.
+ *   Cost: added class="sec" to all section divs, and added class="sectionN" to all li. 
+ */
 window.onscroll = function(){
     if (window.scrollY > 0){
-       findCloset();
-    }
-}
-
-// TODO: Rethink the find closet algorithm.
-function findCloset() {
-    var sections = document.querySelectorAll('.sec');
-    var minIndex = 0;
-    var minDist = Math.abs(sections[0].offsetTop - window.scrollY);
-
-    for (var i = 1; i < sections.length; i++) {
-        var dist = Math.abs(sections[i].offsetTop - window.scrollY);
-        if (dist < minDist) {
-            minIndex = i;
-            minDist = dist;
+        var sections = document.querySelectorAll('.sec');
+        var currIndex = 0;
+        var pageTop = window.scrollY;
+    
+        var OFFSET = 100;  // value to make the highlight effect comes earlier that calculated
+    
+        // loop all section everytime to update currIndex
+        for (var i = 1; i <= sections.length; i++) {
+            if (pageTop + OFFSET > sections[i-1].offsetTop) {
+                currIndex = i-1;
+            }
         }
+        // In the menu, a is the one corresponding to the current section
+        var id = sections[currIndex].id;
+        var a = document.querySelector('.'+id);
+    
+        // find siblings of a and remove style
+        var aSibs = a.parentNode.children;
+        for (var i = 0; i < aSibs.length; i++) {
+            aSibs[i].classList.remove('active');
+        }
+        // add style to a
+        a.classList.add('active');
     }
-    // a is the one corresponding to the current section
-    var id = sections[minIndex].id;
-    var a = document.querySelector('.'+id);
-
-    // find siblings of a and remove style
-    var aSibs = a.parentNode.children;
-    for (var i = 0; i < aSibs.length; i++) {
-        aSibs[i].classList.remove('active');
-    }
-    // add style to a
-    a.classList.add('active');
 }
