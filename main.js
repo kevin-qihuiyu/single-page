@@ -7,12 +7,10 @@
 var timer = null;
 var fab = document.getElementById("up_button");
 
-// Show Go up button when page is already scrolled down a bit.
-window.onscroll = function() {
-    var clientHeight = document.documentElement.clientHeight;
-    var pageTop = window.scrollY;
-
-    if ( pageTop >= clientHeight/3) {
+// Displya "GO UP" button only when page is already scrolled down a bit.
+// Now this value is set to the window height.
+function goUpButtonDisplay() {
+    if ( window.scrollY > window.innerHeight) {
         fab.style.display = 'block';
     } else {
         fab.style.display = 'none';
@@ -47,6 +45,8 @@ function scrollToElement(id) {
  *   Cost: added class="sec" to all section divs, and added class="sectionN" to all li. 
  */
 window.onscroll = function(){
+    goUpButtonDisplay()
+
     if (window.scrollY > 0){
         var sections = document.querySelectorAll('.sec');
         var currIndex = 0;
